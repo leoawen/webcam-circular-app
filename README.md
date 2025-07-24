@@ -17,6 +17,6 @@ This is the first stable version of Webcam Circular.
 
 **How to use:**
 
-1. Download the Webcam-Circular-Pro.exe file below.
+1. Download the Webcam.Circular.exe file below.
 
 2. Run the file. No installation needed!
