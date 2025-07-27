@@ -109,3 +109,5 @@ A forma mais fácil de usar o aplicativo é baixando o executável pronto para u
 *   **Portátil:** Não precisa de instalação, apenas execute o `.exe`.
 
 </details>
+
+[![Sponsor leoawen on GitHub Sponsors](https://img.shields.io/badge/Sponsor-💜-brightgreen?logo=github)](https://github.com/sponsors/leoawen)
