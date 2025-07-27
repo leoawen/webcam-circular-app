@@ -98,7 +98,7 @@ class WebcamCircularApp(QWidget):
         self.start_geometry = self.geometry()
         self.start_mouse_pos = QPoint()
 
-        # --- STATE VARIABLES ---
+        # --- NEW STATE VARIABLES ---
         self.zoom_level = 1.0  # 1.0 = no zoom, 2.0 = 200% zoom
         self.flip_horizontal = True # Starts mirrored by default
 
@@ -149,7 +149,7 @@ class WebcamCircularApp(QWidget):
             
             self.webcam_widget.set_frame(rgb_image)
 
-    # --- OPTION CONTROL FUNCTIONS ---
+    # --- NEW: OPTION CONTROL FUNCTIONS ---
     def toggle_flip_horizontal(self):
         """Inverts the state of horizontal flipping."""
         self.flip_horizontal = not self.flip_horizontal
@@ -158,13 +158,14 @@ class WebcamCircularApp(QWidget):
         """Sets the zoom level from the slider value (100-400)."""
         self.zoom_level = value / 100.0
 
-    # --- CONTEXT MENU EVENT ---
+    # --- NEW: CONTEXT MENU EVENT ---
     def contextMenuEvent(self, event):
         """Creates and displays the options menu on right-click."""
         menu = QMenu(self)
         menu.setStyleSheet(MENU_STYLESHEET) # Apply our custom style
 
         # --- Flip (Mirror) Action ---
+        # CHANGED: "Rebater Imagem" to "Flip Image"
         flip_action = QAction("Flip Image", self, checkable=True)
         flip_action.setChecked(self.flip_horizontal)
         flip_action.triggered.connect(self.toggle_flip_horizontal)
@@ -173,10 +174,13 @@ class WebcamCircularApp(QWidget):
         menu.addSeparator()
 
         # --- Zoom Widget (Slider) ---
+        # To add a custom widget (like a slider) to a menu,
+        # we need to use a QWidgetAction.
         zoom_widget = QWidget()
         zoom_layout = QHBoxLayout(zoom_widget)
         zoom_layout.setContentsMargins(10, 5, 10, 5)
 
+        # CHANGED: "Zoom:" to "Zoom:" (no change, but for consistency)
         zoom_label = QLabel("Zoom:")
         
         zoom_slider = QSlider(Qt.Orientation.Horizontal)
@@ -193,7 +197,7 @@ class WebcamCircularApp(QWidget):
         zoom_action.setDefaultWidget(zoom_widget)
         menu.addAction(zoom_action)
         
-        # --- QUIT ACTION ---
+        # --- NEW: QUIT ACTION ---
         # Add a separator line before the quit action for better organization.
         menu.addSeparator()
         
@@ -260,6 +264,7 @@ class WebcamCircularApp(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    # CHANGED: "janela" to "window" for better readability in English
     window = WebcamCircularApp()
     window.show()
     sys.exit(app.exec())
