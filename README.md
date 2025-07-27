@@ -33,6 +33,8 @@ The easiest way to use the app is to download the ready-to-use executable.
 *   **Lightweight:** Minimal resource usage, runs smoothly.
 *   **Portable:** No installation required, just run the `.exe`.
 
+<img width="1920" height="1080" alt="Webcam Overlay lite Sreenshot Ex" src="https://github.com/user-attachments/assets/367e0a49-52ed-437a-8851-b7bd27f0ecda" />
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
